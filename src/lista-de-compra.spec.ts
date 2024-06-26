@@ -63,13 +63,34 @@ describe("calculaTicket", () => {
         totalConIva: 4.84,
         totalIva: 0.84,
       },
-      desglose: [
+      desgloseIva: [
         {
-          tipoIva: "general",
           cuantia: 0.84,
+          tipoIva: "general",
+        },
+        {
+          tipoIva: "reducido",
+          cuantia: 0,
+        },
+        {
+          tipoIva: "superreducidoA",
+          cuantia: 0,
+        },
+        {
+          tipoIva: "superreducidoB",
+          cuantia: 0,
+        },
+        {
+          tipoIva: "superreducidoC",
+          cuantia: 0,
+        },
+        {
+          tipoIva: "sinIva",
+          cuantia: 0,
         },
       ],
     };
     expect(result).toEqual(expected);
   });
 });
+
