@@ -1,3 +1,4 @@
+import { commonPasswords } from "./constantes";
 import { ValidacionClave } from "./model";
 import {
   tieneCaracteresEspeciales,
@@ -9,8 +10,8 @@ import {
 } from "./password-helper";
 
 export const validarClave = (
-  nombreUsuario: string,
   clave: string,
+  nombreUsuario: string,
   commonPasswords: string[]
 ): ValidacionClave => {
   if (!clave || !nombreUsuario || !commonPasswords) {
@@ -51,3 +52,5 @@ export const validarClave = (
 
   return { esValida: true };
 };
+
+validarClave('sdgh2e5A', 'CharlieWilson', commonPasswords);

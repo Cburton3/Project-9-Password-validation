@@ -29,7 +29,7 @@ describe("validarClave", () => {
 
   it("returns esValido: true if all the requisites are met", () => {
     //Arrange
-    const clave: string = "sdgh2e5A";
+    const clave: string = "sd@gh2e5A";
     const nombreUsuario: string = "CharlieWilson";
     const commonPasswords: string[] = ["password", "123456", "qwerty", "admin"];
 
@@ -45,7 +45,7 @@ describe("validarClave", () => {
 
   it("returns esValido: false if all condition are not met: there arent both capital and lowercase letters", () => {
     //Arrange
-    const clave: string = "sdgh2e5";
+    const clave: string = "sdgh2e5@";
     const nombreUsuario: string = "CharlieWilson";
     const commonPasswords: string[] = ["password", "123456", "qwerty", "admin"];
     //Act
@@ -61,7 +61,7 @@ describe("validarClave", () => {
 
   it("returns esValido: false if all condition are not met: no numbers", () => {
     //Arrange
-    const clave: string = "sdgheA";
+    const clave: string = "sdghe@A";
     const nombreUsuario: string = "CharlieWilson";
     const commonPasswords: string[] = ["password", "123456", "qwerty", "admin"];
     //Act
@@ -77,7 +77,7 @@ describe("validarClave", () => {
 
   it("returns esValido: false if all condition are not met: username used", () => {
     //Arrange
-    const clave: string = "CharlieWilson2e5A";
+    const clave: string = "CharlieWilson2@e5A";
     const nombreUsuario: string = "CharlieWilson";
     const commonPasswords: string[] = ["password", "123456", "qwerty", "admin"];
     //Act

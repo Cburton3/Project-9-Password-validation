@@ -1,5 +1,4 @@
 import { tieneCaracteresEspeciales, tieneLongitudMinima, tieneMayusculasYMinusculas, tieneNombreUsuario, tieneNumeros, tienePalabrasComunes } from "./password-helper";
-//import {ValidacionClave} from './model';
 
 describe("tieneMayusculasYMinusculas", () => {
   it("Deberia de devolver un throw si la entrada es undefined", () => {

@@ -1,8 +1,6 @@
 import { ValidacionClave } from "./model";
-import { commonPasswords } from "./constantes";
 
 export const tieneMayusculasYMinusculas = (clave: string): ValidacionClave => {
-  // Si la clave no tiene mayúsculas y minúsculas, el error será: "La clave debe de tener mayúsculas y minúsculas".
   if (!clave) {
     throw new Error("Los parámetros introducidos no son correctos");
   }
