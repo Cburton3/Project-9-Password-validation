@@ -19,7 +19,7 @@ export const validarClave = (
   }
 
   let result;
-  
+
   result = tieneMayusculasYMinusculas(clave);
   if (!result.esValida) {
     return result;
@@ -53,4 +53,4 @@ export const validarClave = (
   return { esValida: true };
 };
 
-validarClave('sdgh2e5A', 'CharlieWilson', commonPasswords);
+validarClave("sdgh2e5A", "CharlieWilson", commonPasswords);

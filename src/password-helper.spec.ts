@@ -1,4 +1,11 @@
-import { tieneCaracteresEspeciales, tieneLongitudMinima, tieneMayusculasYMinusculas, tieneNombreUsuario, tieneNumeros, tienePalabrasComunes } from "./password-helper";
+import {
+  tieneCaracteresEspeciales,
+  tieneLongitudMinima,
+  tieneMayusculasYMinusculas,
+  tieneNombreUsuario,
+  tieneNumeros,
+  tienePalabrasComunes,
+} from "./password-helper";
 
 describe("tieneMayusculasYMinusculas", () => {
   it("Deberia de devolver un throw si la entrada es undefined", () => {
@@ -213,10 +220,10 @@ describe("tieneLongitudMinima", () => {
 });
 
 describe("tieneNombreUsuario", () => {
-    it("returns esValido: true if the password is the same as the username", () => {
+  it("returns esValido: true if the password is the same as the username", () => {
     //Arrange
     const clave: string = "sdgheA";
-    const nombreUsuario: string = 'CharlieWilson'
+    const nombreUsuario: string = "CharlieWilson";
 
     //Act
     const result = tieneNombreUsuario(nombreUsuario, clave);
@@ -231,7 +238,7 @@ describe("tieneNombreUsuario", () => {
   it("returns esValido: false if the password isnt the same as the username", () => {
     //Arrange
     const clave: string = "CharlieWilson@A";
-    const nombreUsuario: string = 'CharlieWilson'
+    const nombreUsuario: string = "CharlieWilson";
 
     //Act
     const result = tieneNombreUsuario(nombreUsuario, clave);
@@ -247,43 +254,33 @@ describe("tieneNombreUsuario", () => {
 
 describe("tienePalabrasComunes", () => {
   it("returns esValido: true if the password contains common words", () => {
-  //Arrange
-  const clave: string = "sdgheA";
-  const commonPasswords: string[] = [
-    "password",
-    "123456",
-    "qwerty",
-    "admin",
-  ]
+    //Arrange
+    const clave: string = "sdgheA";
+    const commonPasswords: string[] = ["password", "123456", "qwerty", "admin"];
 
-  //Act
-  const result = tienePalabrasComunes( clave, commonPasswords);
+    //Act
+    const result = tienePalabrasComunes(clave, commonPasswords);
 
-  //Assert
-  const expected = {
-    esValida: true,
-  };
-  expect(result).toEqual(expected);
-});
+    //Assert
+    const expected = {
+      esValida: true,
+    };
+    expect(result).toEqual(expected);
+  });
 
-it("returns esValido: false if the password doesnt contains common words", () => {
-  //Arrange
-  const clave: string = "CharliepasswordWilson@A";
-  const commonPasswords: string[] = [
-    "password",
-    "123456",
-    "qwerty",
-    "admin",
-  ]
+  it("returns esValido: false if the password doesnt contains common words", () => {
+    //Arrange
+    const clave: string = "CharliepasswordWilson@A";
+    const commonPasswords: string[] = ["password", "123456", "qwerty", "admin"];
 
-  //Act
-  const result = tienePalabrasComunes( clave, commonPasswords);
+    //Act
+    const result = tienePalabrasComunes(clave, commonPasswords);
 
-  //Assert
-  const expected = {
-    esValida: false,
-    error: "La clave no debe de contener palabras comunes",
-  };
-  expect(result).toEqual(expected);
-});
+    //Assert
+    const expected = {
+      esValida: false,
+      error: "La clave no debe de contener palabras comunes",
+    };
+    expect(result).toEqual(expected);
+  });
 });
